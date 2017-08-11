@@ -119,6 +119,18 @@ public class Constant {
 	  public static String Reg_ErrorText="body.page-register .basic-page .error";
 	  public static String Reg_BonusTermFrameBoxHeader="div.modal-dialog #scroller h2";
 	  public static String Reg_BonusTermFrameBox_Close="div.registration-modal .modal-dialog a.close";
+	  public static String Reg_GenderTypeFemale="";
+	  public static String Reg_GenderTypeMale="";
+	  public static String Reg_Country="";
+	  public static String Reg_Currency="";
+	  public static String Reg_CountryDialingCode="";
+	  public static String Reg_FindAddressButton="";
+	  public static String Reg_WelToSuperCasinoText="";
+	  public static String Reg_JackpotSliderBlock="";
+	  public static String Reg_PromoBanner="";
+	  public static String Reg_RegisterTitle="";
+	  public static String Reg_HelpIconlink="";
+	  public static String Reg_ChatIconlink="";
 	  // Elements on Welcome Page
 	  
 	  public static String WelcomePage_TitleText="h1.welcome_header";
