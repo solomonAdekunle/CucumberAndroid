@@ -90,9 +90,9 @@ public class GameInfoPage extends BasePage{
 		WebDriverWait wait=new WebDriverWait(d,90);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.GameInfoPlayForReal)));
 		WebElement PlayForReal=d.findElement(By.cssSelector(Constant.GameInfoPlayForReal));
-		System.out.println(PlayForReal.isDisplayed());
+		//System.out.println(PlayForReal.isDisplayed());
 		Actions Move = new Actions(d);
-		Move.moveToElement(PlayForReal).doubleClick().build().perform();
+		Move.moveToElement(PlayForReal).click().build().perform();
 	//((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayForReal);
 		
 		

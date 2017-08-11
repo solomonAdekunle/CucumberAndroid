@@ -19,23 +19,25 @@ public class ChatPage extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 	 public void isLiveChatSuperCasinoLogoPresent(){
-		 Set<String> Windowids = d.getWindowHandles();
-			Iterator<String> it = Windowids.iterator();
-			String MainWindowids = it.next();
-			String betssonChatWindowId = it.next();
-			System.out.println(MainWindowids);
-			System.out.println(betssonChatWindowId);
-			while (it.hasNext())
-				;
-			// System.out.println(it.next());
-			d.switchTo().window(betssonChatWindowId);
+//		 Set<String> Windowids = d.getWindowHandles();
+//			Iterator<String> it = Windowids.iterator();
+//			String MainWindowids = it.next();
+//			String betssonChatWindowId = it.next();
+//			System.out.println(MainWindowids);
+//			System.out.println(betssonChatWindowId);
+//			while (it.hasNext())
+//				;
+//			// System.out.println(it.next());
+//			d.switchTo().window(betssonChatWindowId);
+		 WebElement Frame = d.findElement(By.cssSelector("iframe.noFrame"));
+	    	d.switchTo().frame(Frame);
 		 WebElement Logo= d.findElement(By.cssSelector(Constant.LiveChat_SupercasinoLogo));
 		 WebDriverWait wait= new WebDriverWait(d, 30);
 		 wait.until(ExpectedConditions.visibilityOf(Logo));
 		 Logo.isDisplayed();
 		 Assert.assertTrue(Logo.isDisplayed());
-		 d.close();
-		 d.switchTo().window(MainWindowids);
+		 d.navigate().back();
+		 
 		 
 	 }
 

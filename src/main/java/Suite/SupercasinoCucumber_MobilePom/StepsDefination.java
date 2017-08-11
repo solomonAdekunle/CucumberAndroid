@@ -1,7 +1,12 @@
 package Suite.SupercasinoCucumber_MobilePom;
 
 import java.awt.AWTException;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import org.junit.Assert;
 
@@ -112,11 +117,14 @@ public class StepsDefination extends TestBase {
 
 	@Before
 	public void GoToUrl() throws InterruptedException {
+		
 		if (basePage.isLoggedIn()) {
 			basePage.logOut();
 			// d.get(Config.getProperty("URL"));
 		}
+		
 	}
+	
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -394,7 +402,20 @@ public class StepsDefination extends TestBase {
 		RegPage.sendRegCounty(county);
 
 	}
+	@When("^I click Gender Type as Female$")
+	public void i_click_Gender_Type_as_Female() {
+	   
+	}
 
+	@When("^I enter Country as \"([^\"]*)\"$")
+	public void i_enter_Country_as(String arg1) {
+	   
+	}
+
+	@When("^I enter Currency as \"([^\"]*)\"$")
+	public void i_enter_Currency_as(String arg1){
+	   
+	}
 	/*
 	 * Enter Your Post Code for Registration
 	 * 
@@ -1060,6 +1081,7 @@ public class StepsDefination extends TestBase {
 		withdrawPage.clickCashierWithdrawDeclinedTransactionPopBox_Ok();
 
 	}
+	
 	/* Click on Roulette Express Premium game */
 	@When("^I click on Roulette Express Premium Game$")
 	public void i_click_on_Roulette_Express_Premium_Game() {
@@ -1098,6 +1120,20 @@ public class StepsDefination extends TestBase {
 	public void i_click_on_Playtech_Virtue_Fusion_slot_Game() {
 	    homePage.clickCasinoSlotsGames();
 	}
+	
+	/* Click on the Search box */
+	@When("^I click on the Search Input Icon$")
+	public void i_click_on_the_Search_Input_Icon()  {
+		homePage.clickSearchInputBox();
+	   
+	}
+	/* Click on the Search game on the Search box*/
+	@When("^I enter Game Search for as \"([^\"]*)\"$")
+	public void i_enter_Game_Search_for_as(String gameSearchType) {
+		homePage.sendGameSearch(gameSearchType);
+	  
+	}
+
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* This Below are Only for @Then Method */
@@ -1262,6 +1298,130 @@ public class StepsDefination extends TestBase {
 	public void i_should_Navigate_to_Registration_Page() {
 		Assert.assertEquals(RegPage.isRegisterPageTitlePresent(), "REGISTER");
 
+	}
+	@Then("^I should see Register on the Register form$")
+	public void i_should_see_Register_on_the_Register_form() {
+	   
+	}
+
+	@Then("^I should Email Input box displayed on Registration page$")
+	public void i_should_Email_Input_box_displayed_on_Registration_page()  {
+	    
+	}
+
+	@Then("^I should see Password Input box displayed on Registration page$")
+	public void i_should_see_Password_Input_box_displayed_on_Registration_page() {
+	    
+	}
+
+	@Then("^I should see Useranme Input box displayed on Registration Page$")
+	public void i_should_see_Useranme_Input_box_displayed_on_Registration_Page()  {
+	    
+	}
+
+	@Then("^I should see ScreenName Input box displayed on Registration Page$")
+	public void i_should_see_ScreenName_Input_box_displayed_on_Registration_Page() {
+	    
+	}
+
+	@Then("^I should see FirstName Input box displayed on Registration Page$")
+	public void i_should_see_FirstName_Input_box_displayed_on_Registration_Page() {
+	    
+	}
+
+	@Then("^I should see Surname Input box displayed on Registration Page$")
+	public void i_should_see_Surname_Input_box_displayed_on_Registration_Page()  {
+	    
+	}
+
+	@Then("^I should see Date of Birth Day Dropdown box displayed on Registration Page$")
+	public void i_should_see_Date_of_Birth_Day_Dropdown_box_displayed_on_Registration_Page() {
+	   
+	}
+
+	@Then("^I should see Date of Birth Month Dropdown box displayed on Registration Page$")
+	public void i_should_see_Date_of_Birth_Month_Dropdown_box_displayed_on_Registration_Page()  {
+	    
+	}
+
+	@Then("^I should see Date of Birth Year Dropdown box displayed on Registration Page$")
+	public void i_should_see_Date_of_Birth_Year_Dropdown_box_displayed_on_Registration_Page()  {
+	    
+	}
+
+	@Then("^I should see Gender Radio Buttons displayed on Registration Page$")
+	public void i_should_see_Gender_Radio_Buttons_displayed_on_Registration_Page()  {
+	    
+	}
+
+	@Then("^I should see Country Input box displayed on Registration Page$")
+	public void i_should_see_Country_Input_box_displayed_on_Registration_Page()  {
+	    
+	}
+
+	@Then("^I should see Currency Input box displayed on Registration Page$")
+	public void i_should_see_Currency_Input_box_displayed_on_Registration_Page()  {
+	    
+	}
+
+	@Then("^I should see House Number Input box displayed on Registration Page$")
+	public void i_should_see_House_Number_Input_box_displayed_on_Registration_Page() {
+	   
+	}
+	
+	@Then("^I should see Find Address button displayed on Registration Page$")
+	public void i_should_see_Find_Address_button_displayed_on_Registration_Page()  {
+	    
+	}
+
+	@Then("^I should see Country Code dropdown box displayed on Registration Page$")
+	public void i_should_see_Country_Code_dropdown_box_displayed_on_Registration_Page(){
+	   
+	}
+
+	@Then("^I should see Contact Number Input box displayed on Registration Page$")
+	public void i_should_see_Contact_Number_Input_box_displayed_on_Registration_Page()  {
+	   
+	}
+
+	@Then("^I should see Deposit Limit Type Input box displayed on Registration Page$")
+	public void i_should_see_Deposit_Limit_Type_Input_box_displayed_on_Registration_Page()  {
+	   
+	}
+
+	@Then("^I should see Deposit Limit Amount Dropdown box displayed on Registration Page$")
+	public void i_should_see_Deposit_Limit_Amount_Dropdown_box_displayed_on_Registration_Page() {
+	   
+	}
+
+	@Then("^I should see Free Bonuses and Offer Check box checked displayed on Registration Page$")
+	public void i_should_see_Free_Bonuses_and_Offer_Check_box_checked_displayed_on_Registration_Page() {
+	    
+	}
+
+	@Then("^I should see OverEighteenPlus Check box displayed on Registration Page$")
+	public void i_should_see_OverEighteenPlus_Check_box_displayed_on_Registration_Page()  {
+	   
+	}
+
+	@Then("^I should see terms link within OverEighteenPlus Content displayed on Registration Page$")
+	public void i_should_see_terms_link_within_OverEighteenPlus_Content_displayed_on_Registration_Page() {
+	  
+	}
+
+	@Then("^I should see Privacy Policy link within OverEighteenPlus Content displayed on Registration Page$")
+	public void i_should_see_Privacy_Policy_link_within_OverEighteenPlus_Content_displayed_on_Registration_Page() {
+	    
+	}
+
+	@Then("^I should see Register Now Button displayed on Registration Page$")
+	public void i_should_see_Register_Now_Button_displayed_on_Registration_Page()  {
+	    
+	}
+
+	@Then("^I should see Compliance Text displayed below Register Now button on Registration Page$")
+	public void i_should_see_Compliance_Text_displayed_below_Register_Now_button_on_Registration_Page()  {
+	   
 	}
 
 	/*
@@ -1497,14 +1657,14 @@ public class StepsDefination extends TestBase {
 	/* Verify if Slots Game can be launched by clicking Play button */
 	@Then("^I should see a Slots game launching$")
 	public void i_should_see_a_Slots_game_launching() {
-		Assert.assertTrue(slotGamePage.isSlotsGameMenuWithinGameSessionPagePressent());
+		Assert.assertTrue(slotGamePage.isVegasSlotGameSoundsBoxPresent());
 		slotGamePage.NavigateBackToHomePage();
 	}
 
 	/* Verify if Table Game can be launched by clicking Play button */
 	@Then("^I should see a Table Game launching$")
 	public void i_should_see_a_Table_Game_launching() {
-		Assert.assertTrue(slotGamePage.isSlotsGameMenuWithinGameSessionPagePressent());
+		Assert.assertTrue(slotGamePage.isVegasSlotGameSoundsBoxPresent());
 		slotGamePage.NavigateBackToHomePage();
 
 	}
@@ -1516,6 +1676,7 @@ public class StepsDefination extends TestBase {
 	@Then("^I should see a Vegas Slots Game launching$")
 	public void i_should_see_a_Vegas_Slots_Game_launching() {
 		Assert.assertTrue(slotGamePage.isGameLoading());
+		//Assert.assertTrue(slotGamePage.isVegasSlotGameSoundsBoxPresent());
 		slotGamePage.NavigateBackToHomePage();
 
 	}
@@ -1991,7 +2152,9 @@ public class StepsDefination extends TestBase {
 	/* Verify if user will Navigate to SafeCharge Withdraw Cashier Page */
 	@Then("^I should Navigate to SafeCharge Cashier Withdraw Page$")
 	public void i_should_Navigate_to_SafeCharge_Cashier_Withdraw_Page() {
-
+		Assert.assertTrue(withdrawPage.isWithdrawFundsTextPresent());
+		withdrawPage.NavigateBackToHomePage();
+		
 	}
 
 	/* Verify if user will Navigate to SafeCharge Deposit Cashier Page */
@@ -2234,6 +2397,7 @@ public class StepsDefination extends TestBase {
 	@Then("^I should see Your transaction was approved Text displayed$")
 	public void i_should_see_Your_transaction_was_approved_Text_displayed() {
 		Assert.assertTrue(depositPage.isCashierDepositSuccessLightBoxTextPresent());
+	    	
 	}
 
 	/*
@@ -2243,7 +2407,7 @@ public class StepsDefination extends TestBase {
 	@Then("^I should see CloseButton within the Success Cashier Pop-up box displayed$")
 	public void i_should_see_CloseButton_within_the_Success_Cashier_Pop_up_box_displayed() {
 		Assert.assertTrue(depositPage.isCashierDepositSuccessLightBoxCloseButtonPresent());
-		depositPage.NavigateBackToHomePage();
+		
 
 	}
 
@@ -2345,15 +2509,13 @@ public class StepsDefination extends TestBase {
 	@Then("^I should see Contact Support Number displayed$")
 	public void i_should_see_Contact_Support_Number_displayed() {
 		Assert.assertTrue(depositPage.isCashierDepositDeclinedPopBoxMCustomerSupportContactNumberPresent());
-
+		depositPage.NavigateBackToHomePage();
 	}
    /* Verify if Close icon is diplayed within the Declined Pop-up box */
 	@Then("^I should see a close icon displayed$")
 	public void i_should_see_a_close_icon_displayed() {
 		Assert.assertTrue(depositPage.isCashierDepositDeclinedPopBoxCloseIconPresent());
-		depositPage.closePopUpBox();
-		depositPage.closePopUpBox();
-		depositPage.NavigateBackToHomePage();
+		
 
 	}
     /* Verify if the No Withdrawal method of Payement Pop-up box is displayed */
@@ -2367,6 +2529,9 @@ public class StepsDefination extends TestBase {
 	@Then("^I should navigate to Withdrawl page\\.$")
 	public void i_should_navigate_to_Withdrawl_page() {
 		Assert.assertTrue(withdrawPage.isWithdrawFundsTextPresent());
+		
+//		basePage.logOut();
+		
 
 	}
     
@@ -2450,7 +2615,6 @@ public class StepsDefination extends TestBase {
 		Assert.assertTrue("equals", PreviousBalDisplay == NewBal);
 		depositPage.NavigateBackToHomePage();
 	}
-	
 	/* Verify if Login Popup box is displayed */
 	@Then("^I should see a Login Pop-up box displayed on Game Info Page$")
 	public void i_should_see_a_Login_Pop_up_box_displayed_on_Game_Info_Page() {
@@ -2521,7 +2685,7 @@ public class StepsDefination extends TestBase {
 	/* Verify if login pop-up box is displayed within the Game Info Pag*/
 	@Then("^I should see a Login Pop-up box displayed on this Playtech game GameInfo page$")
 	public void i_should_see_a_Login_Pop_up_box_displayed_on_this_Playtech_game_GameInfo_page()  {
-		Assert.assertTrue(loginPage.isLoginPopUpBoxPresend());
+	    
 	}
 	/* Verify if Play for Fun Button is displayed within the Game Info Pag*/
 	@Then("^I should see Play for Fun Button on Game Info Page$")
@@ -2529,11 +2693,33 @@ public class StepsDefination extends TestBase {
 		Assert.assertTrue(gameInfoPage.isGameInfoPlayForFunButtonPresent());
 	   
 	}
+   /* Verify if Search box is opened when click on search box */
+	@Then("^I should see Search Input box open$")
+	public void i_should_see_Search_Input_box_open()  {
+		Assert.assertTrue(homePage.isGameSearchBoxOpenPresent());
+	}
+	/* Verify if Search close icon box is  displayed within the Search input box */
+	@Then("^I should see Search close icon$")
+	public void i_should_see_Search_close_icon() {
+		Assert.assertTrue(homePage.isGameSearchBoxCloseIconPresent());
+	  
+	}
+	/* Verify if Roulette Express Premium  Return as a search Game*/
+	@Then("^I should see Roulette Express Premoium display from the Search$")
+	public void i_should_see_Roulette_Express_Premoium_display_from_the_Search()  {
+		Assert.assertTrue(homePage.isGameSearchRouletteGameReturnPresent());
+	}
+	/* Verify if Play Tech Virtue fusion Game  Return as a search Game*/
+	@Then("^I should see Virtue Fusion Game display from the Search$")
+	public void i_should_see_Virtue_Fusion_Game_display_from_the_Search() {
+		Assert.assertTrue(homePage.isGameSearchPlayTechGameReturnPresent());
+	  
+	}
 
 
 	@After("@web")
 	public void closeBrowser() throws InterruptedException {
-		d.quit();
+		d.close();
 		// if(basePage.isLoggedIn()){
 		// basePage.logOut();
 		//
