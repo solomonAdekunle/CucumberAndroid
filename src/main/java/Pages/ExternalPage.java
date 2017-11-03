@@ -67,7 +67,7 @@ public class ExternalPage extends BasePage{
 			;
 		// System.out.println(it.next());
 		d.switchTo().window(tabbedWindowId);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		Assert.assertEquals(d.getCurrentUrl(), "http://www.betssongroup.com/");
 		Thread.sleep(1000);
 		d.close();

@@ -44,8 +44,7 @@ public class TestBase {
 						System.getProperty("user.dir") + "\\src\\main\\java\\Config\\Config.properties");
 				CONFIG.load(fs);
 
-				// System.out.println(OR.getProperty("loginusername"));
-				// System.out.println(CONFIG.getProperty("loginURL"));
+				
 
 			} catch (Exception e) {
 				System.out.println("Error on intializing properties files");
@@ -63,8 +62,8 @@ public class TestBase {
 		capabilities.setCapability("platformVersion", "6.0.1");
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
-		// capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT,
-		// "true");
+		 //capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT,
+		 //"true");
 		capabilities.setCapability("newCommandTimeout",60000);
 		capabilities.setCapability("autoWebviewTimeout",60000);
 		d = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);

@@ -4,9 +4,9 @@
   @ignore
   @Reg
  Scenario Outline:Login
- Given I am on the Page
-  #When I click on Login Button
-  When  I enter Username as "<username>"
+ Given I Navigate to the homepage on "Chrome"
+  When I click on Login Button
+   And  I enter Username as "<username>"
    And  I enter Password as "<password>"
    And  I click on SignIn button
   Then  I should see username as "<username>" present

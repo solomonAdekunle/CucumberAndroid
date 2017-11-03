@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -121,9 +122,11 @@ public class HomePage extends BasePage {
 	}
 
 	public void clickNetPlayTvRouletteGame(String GameType) {
-		List<WebElement> NetplatvGames=d.findElements(By.cssSelector(Constant.hp_NetPlayTv_Games));
-		WebElement RouletteGame=NetplatvGames.get(2);
-		RouletteGame.click();
+		WebElement RouletteGame=d.findElement(By.cssSelector(Constant.RouletteExpressPremium));
+		Actions act = new Actions(d);
+		act.moveToElement(RouletteGame).build().perform();
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", RouletteGame);
+		//RouletteGame.click();
 
 	}
 
@@ -181,7 +184,8 @@ public class HomePage extends BasePage {
 	}
 	
 	public void clickRouletteExpressPremium(){
-		d.findElement(By.cssSelector(Constant.RouletteExpressPremium)).click();
+	WebElement RouletteGame=	d.findElement(By.cssSelector(Constant.RouletteExpressPremium));
+	((JavascriptExecutor) d).executeScript("arguments[0].click();", RouletteGame);
 	}
 
 	public void sendGameSearch(String gameSearchType) {

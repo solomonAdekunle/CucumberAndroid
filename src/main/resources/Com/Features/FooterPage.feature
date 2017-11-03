@@ -2,7 +2,7 @@ Feature: User should see footer on all pages on the site
          and Footer should contain Term$Conditions, PrivacyPolicy, Responsible Gambling and VIP links
           it should also displayed Method of Payments icons, Facebook icon, twitter icon, Netplaytv icon , over18 icon
           and Gamecare Certified logo, Gamling Commisison icon and Netplay Tv lience texts.
-        
+       
 #@ignore
   @Footer	          
 Scenario: Verifying Footer contents on Casino Home Page
@@ -18,8 +18,8 @@ Then  I should see Terms link within the footer
  And  I should see GamCareIcon link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
- 
-# @ignore
+
+#@ignore
   @Footer	 
  Scenario: Verifying Footer contents is on Vegas Home Page
 Given I Navigate to the homepage on "browser" 
@@ -35,7 +35,7 @@ Then  I should see Terms link within the footer
  And  I should see GamCareIcon link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
- 
+
   #@ignore
   @Footer	 
 Scenario: Verifying Footer contents is on Live Home Page
@@ -123,7 +123,7 @@ Then  I should see Terms link within the footer
  And  I should see GamCareIcon link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
- 
+
  #@ignore
  @Footer	 
  Scenario: Verifying if Casino VIP link within the footer can be clicked
@@ -142,7 +142,7 @@ Then  I should see Terms link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
- 
+
 #@ignore
  @Footer	 
 Scenario: Verifying if Vegas Terms And Conditions link within the footer can be clicked
@@ -180,7 +180,7 @@ Then  I should Naviagte to Vegas PrivacyPolicy page
  And  I should see GamCareIcon link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
- 
+
 #@ignore
  @Footer	 
 Scenario: Verifying if Vegas ResponsibleGambling link within the footer can be clicked
@@ -199,6 +199,10 @@ Then  I should Naviagte to Vegas ResponsibleGambling page
  And  I should see GamCareIcon link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
+
+
+
+
 #@ignore
  @Footer	 
 Scenario: Verifying if Vegas VIP link within the footer can be clicked
@@ -217,7 +221,7 @@ Then  I should Naviagte to Vegas VIP page
  And  I should see GamCareIcon link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
- 
+
 #@ignore
  @Footer	 
 Scenario: Verifying if Live Terms And Conditions link within the footer can be clicked
@@ -292,7 +296,7 @@ When  I click on Live Vertical Tab
  And  I should see OverEighteenIcon link within the footer
  And  I should see GamCareIcon link within the footer
  And  I should see GamblingCommissionIcon link within the footer
-# And  I should see legalText within the footer
+ And  I should see legalText within the footer
  
  #@ignore
  @Footer	 
