@@ -152,7 +152,8 @@ public class SideBarPage extends BasePage {
 
 	public boolean IsSideBarLogOutLinkPresent() {
 		WebDriverWait wait = new WebDriverWait(d, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_Logout)));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.SideBarMenu_Logout)));
+		System.out.println(d.findElement(By.cssSelector(Constant.SideBarMenu_Logout)).isDisplayed());
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_Logout)).isDisplayed();
 
 	}
@@ -167,7 +168,7 @@ public class SideBarPage extends BasePage {
 	}
 
 	public void clickSideBarLoginButton() {
-		WebDriverWait wait = new WebDriverWait(d, 30);
+		WebDriverWait wait = new WebDriverWait(d,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_Login)));
 		WebElement LoginButton = d.findElement(By.cssSelector(Constant.SideBarMenu_Login));
 		((JavascriptExecutor) d).executeScript("arguments[0].click();", LoginButton);

@@ -34,7 +34,7 @@ public class Constant {
 	 public static String hp_GamePopUPBox_closeIcon="div.gameInfo-modal a.close .icon-close";
 	 public static String hp_CasinoSearchInputbox="div.search_field_container .search_field";
 	 public static String hp_CasinoSearchInputboxCloseIcon="a.close_search";
-	 public static String hp_SearchGameRouletteReturn="div.netplay-games.rep.NetplayRoulette_TEST";
+	 public static String hp_SearchGameRouletteReturn="div.netplay-games.rep.category_80.mobile_only";
 	 public static String hp_SearcgGameVirtueFusionGameReturn="div.playtech-games.Cleopatra.PLUS";
 	 
 	 

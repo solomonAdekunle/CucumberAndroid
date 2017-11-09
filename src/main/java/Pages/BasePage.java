@@ -52,7 +52,7 @@ public class BasePage {
 	}
 
 	public boolean isLoginButtonPresent() {
-		WebDriverWait wait = new WebDriverWait(d, 30);
+		WebDriverWait wait = new WebDriverWait(d, 15);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_Login)));
 		return d.findElement(By.cssSelector(Constant.hp_Login)).isDisplayed();
 
@@ -198,8 +198,14 @@ public class BasePage {
 	}
 
 	public boolean isLoggedIn() {
-		// WebElement
-		// Depositbutton=d.findElement(By.cssSelector(Constant.hp_DepositButton));
+		try {
+			WebElement PlayerMessage = d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
+			if (PlayerMessage.isDisplayed() == true)
+				((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
+		} catch (NoSuchElementException e) {
+			e.getStackTrace();
+		}
+
 		if (isElementPresent(Constant.hp_DepositButton))
 			return true;
 		else
@@ -215,18 +221,7 @@ public class BasePage {
 		d.findElement(By.cssSelector(Constant.LoginPopBoxPassword)).sendKeys(password);
 		Thread.sleep(1000);
 		d.findElement(By.cssSelector(Constant.LoginPopBoxSignin)).click();
-		WebDriverWait wait = new WebDriverWait(d, 10);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.hp_DepositButton)));
-
-		try {
-			WebElement PlayerMessage = d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
-			if (PlayerMessage.isDisplayed() == true)
-				((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
-		} catch (NoSuchElementException e) {
-			e.getStackTrace();
 		}
-
-	}
 
 	public void logOut() {
 		try {
@@ -239,7 +234,7 @@ public class BasePage {
 			e.getStackTrace();
 		}
 
-		WebDriverWait wait = new WebDriverWait(d, 15);
+		WebDriverWait wait = new WebDriverWait(d, 20);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(Constant.hp_GamesPopUpBox)));
 		d.findElement(By.cssSelector(Constant.hp_SidebarIcon)).click();
 		WebElement Logoutlink = d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));

@@ -1,8 +1,10 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -15,32 +17,31 @@ public class SlotsGamePage  extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public boolean isSlotsGameMenuWithinGameSessionPagePressent(){
-		WebElement iFrame= d.findElement(By.tagName("iframe"));
-		System.out.println(iFrame.getSize());
-		WebDriverWait wait = new WebDriverWait(d,220);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("iframe#aliveFrame")));
-		WebElement Frame = d.findElement(By.cssSelector("iframe#aliveFrame"));
-		WebElement Frame2=d.findElement(By.cssSelector("iframe.force-fullscreen"));
-		//wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.SlotsGameMenuIcon)));
-    	d.switchTo().frame(Frame).switchTo().defaultContent().switchTo().frame(Frame2);
-		WebElement PlayTechGameSessionMenuIcon=d.findElement(By.cssSelector(Constant.SlotsGameMenuIcon));
-		System.out.println(PlayTechGameSessionMenuIcon.isDisplayed());
-		return PlayTechGameSessionMenuIcon.isDisplayed();
-	//return	d.findElement(By.cssSelector(Constant.SlotsGameMenuIcon)).isDisplayed();
-	}
+
+		/* Get current Page url address */
+		public String isSlotsGameMenuWithinGameSessionPagePressent() {
+			this.waitForLoad(d);
+			String PlaytechUrl = d.getCurrentUrl();
+			System.out.println(PlaytechUrl);
+			return PlaytechUrl;
+
+		}
+	
 	 public void NavigateBackToHomePage(){
 		 d.navigate().back();
 	 }
 	 
 	 
-	public boolean isVegasSlotGameSoundsBoxPresent(){
-		WebDriverWait wait = new WebDriverWait(d,200);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Constant.SlotGamesSoundPopUpBox)));
-//		WebElement Frame = d.findElement(By.cssSelector("iframe#aliveFrame"));
-//		d.switchTo().frame(Frame).switchTo().defaultContent();
-		return	d.findElement(By.xpath(Constant.SlotGamesSoundPopUpBox)).isDisplayed();
+	public String isVegasSlotGameSoundsBoxPresent(){
+		this.waitForLoad(d);
+		System.out.println(d.getCurrentUrl());
+		return d.getCurrentUrl();
 	}
+	
+	
+	
+	
+	
 	
 	public boolean isGameLoading(){
 		WebDriverWait wait = new WebDriverWait(d,200);
@@ -52,5 +53,16 @@ public class SlotsGamePage  extends BasePage{
 		return	d.findElement(By.cssSelector(Constant.SlotGamesLoading)).isDisplayed();
 	}
 		
+	
+	// wait for page to load //
+		public void waitForLoad(WebDriver driver) {
+			ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
+				public Boolean apply(WebDriver d) {
+					return ((JavascriptExecutor) d).executeScript("return document.readyState").equals("complete");
+				}
+			};
+			WebDriverWait wait = new WebDriverWait(d, 35);
+			wait.until(pageLoadCondition);
+		}
 	}
 

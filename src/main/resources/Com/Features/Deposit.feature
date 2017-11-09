@@ -5,7 +5,7 @@ Feature: Deposit
 
   
  
-@ignore
+#@ignore
  @Deposit
  Scenario Outline:Deposit
 Given I Navigate to the homepage on "browser"
@@ -33,7 +33,7 @@ Given I Navigate to the homepage on "browser"
  	|browser	| 
  	| Chrome	|
  
- @ignore
+ #@ignore
  @DepositAppoved
  Scenario: Checking if Success Cashier deposit pop-up will be displayed
 Given I Navigate to the homepage on "browser"

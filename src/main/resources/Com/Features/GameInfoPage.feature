@@ -16,7 +16,7 @@ Then I should see the Name of the game as title Page
  And I should see AppStore logo on Game Info
  And I should see Android Logo on Game Info Page
  
-@ignore
+#@ignore
 @gameInfo
 Scenario: Unauthenticated user Navigating to Roulette Game  game Info page and Click onPlay For Real
  Given I Navigate to the homepage on "browser" 
@@ -44,7 +44,7 @@ Then I should see the Name of the game as title Page
  And I should see Android Logo on Game Info Page
  
 
-@ignore
+#@ignore
 @gameInfo
 Scenario: Authenticated user launching  Roulette Game from  game Info page 
 Given I have loggedin on the BasePage
@@ -55,15 +55,16 @@ Then I should see a Play for Cash game Launching
 
 @ignore
 @gameInfo
-Scenario: Authenticated user launching  Roulette Game from  game Info page 
+Scenario: Authenticated user launching Roulette Game from  game Info page 
 Given I have loggedin on the BasePage
 When I click on Roulette Express Premium Game
 And I click on More info link
 And I click on Play For Fun on Game Info Page
 Then I should see a Demo Game Launching 
+
 #@ignore
 @gameInfo
-Scenario: Unauthenticated user Navigating to Platech Game  game Info page 
+Scenario: Unauthenticated user Navigating to Playtech Game  game Info page 
  Given I Navigate to the homepage on "browser" 
 When I click on Playtech casino slot Game 
  And I click on More info link
@@ -122,7 +123,7 @@ And I click on Play For Real on Game Info Page
 Then I should see a Slots game launching
 #Then I should see a Vegas Slots Game launching
 
-@ignore
+#@ignore
 @gameInfo
 Scenario: Authenticated user navigating to Playtech Casino Slot game Info page
 Given I have loggedin on the BasePage

@@ -80,7 +80,7 @@ public class HomePage extends BasePage {
 	}
 	public boolean isGameSearchRouletteGameReturnPresent(){
 		WebElement SearchRolutteGame=d.findElement(By.cssSelector(Constant.hp_SearchGameRouletteReturn));
-		WebDriverWait wait = new WebDriverWait(d,50);
+		WebDriverWait wait = new WebDriverWait(d,75);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.hp_SearchGameRouletteReturn)));
 		System.out.println(SearchRolutteGame.isDisplayed());
 		d.findElement(By.cssSelector(Constant.hp_SearchGameRouletteReturn));
@@ -90,7 +90,7 @@ public class HomePage extends BasePage {
 	}
 	public boolean isGameSearchPlayTechGameReturnPresent(){
 		WebElement SearchVegasGame=d.findElement(By.cssSelector(Constant.hp_SearcgGameVirtueFusionGameReturn));
-		WebDriverWait wait = new WebDriverWait(d,65);
+		WebDriverWait wait = new WebDriverWait(d,75);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.hp_SearcgGameVirtueFusionGameReturn)));
 		System.out.println(SearchVegasGame.isDisplayed());
 		d.findElement(By.cssSelector(Constant.hp_SearcgGameVirtueFusionGameReturn));
@@ -194,5 +194,8 @@ public class HomePage extends BasePage {
 		d.findElement(By.cssSelector(Constant.hp_CasinoSearchInputbox)).sendKeys(gameSearchType);
 	}
 	
+	public void RefreshBrowser(){
+		d.navigate().refresh();
+	}
 	
 }

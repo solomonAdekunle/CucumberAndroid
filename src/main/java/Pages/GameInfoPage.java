@@ -92,18 +92,22 @@ public class GameInfoPage extends BasePage{
 		WebElement PlayForReal=d.findElement(By.cssSelector(Constant.GameInfoPlayForReal));
 		//System.out.println(PlayForReal.isDisplayed());
 		Actions Move = new Actions(d);
-		Move.moveToElement(PlayForReal).click().build().perform();
-	//((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayForReal);
+		//Move.moveToElement(PlayForReal).click().build().perform();
+	((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayForReal);
 		
 		
-		//d.findElement(By.cssSelector(Constant.GameInfoPlayForReal)).click();
-//	
+		
+	
 		
 		
 	}
 	
 	public void clickGameInfoPlayForFunButton(){
-		d.findElement(By.cssSelector(Constant.GameInfoPlayForFun)).click();
+		WebDriverWait wait=new WebDriverWait(d,90);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.GameInfoPlayForFun)));
+		WebElement PlayForFun=d.findElement(By.cssSelector(Constant.GameInfoPlayForFun));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayForFun);
+		//d.findElement(By.cssSelector(Constant.GameInfoPlayForFun)).click();
 	}
 	
 	
